@@ -9,7 +9,8 @@ class Obstacle(pygame.sprite.Sprite):
     def __init(self, type, location):
         super().__init__()
         self.type = type
-        self.location = location
+        self.x = location[0]
+        self.y = location[1]
         if self.type == 'Person':
             self.width = 0.4
             self.height = 1.8
@@ -19,6 +20,7 @@ class Obstacle(pygame.sprite.Sprite):
             self.height = 1.5
         #    self.image = pygame.image.load(r"Images\Car.jpg").convert()     #may need to change args
         self.image = pygame.image.load(r"Images\%s.jpg" % type).convert()
+        self.rect = self.image.get_rect(topleft=(self.x-(self.width/2), self.y-(self.height/2)))
 
 
 class Bus(pygame.sprite.Sprite):
@@ -30,12 +32,13 @@ class Bus(pygame.sprite.Sprite):
         self.x = 350
         self.y = 400
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
-        self.rect = self.image.get_rect(topleft=(self.x-(self.width/2), self.y-(self.height/2)))
+        # self.rect = self.image.get_rect(topleft=(self.x-(self.width/2), self.y-(self.height/2)))
+        self.rect = self.image.get_rect(center=(self.x, self.y))
 
         
 
 
-class GUI():
+class GUI:
     def __init__(self):
         pygame.init()
         self.fps = 60    
@@ -57,7 +60,7 @@ class GUI():
             for event in pygame.event.get():
                 if event.type == QUIT:
                     pygame.quit()
-                    sys.quit()
+                    sys.exit()
             
 
             pygame.display.update()
