@@ -22,15 +22,7 @@ class Bus(pygame.sprite.Sprite):
         #self.width = 2.5 * 50 
         self.x = 320
         self.y = 320
-        #self.image = pygame.transform.scale(self.image, (self.width, self.height))
-        #self.rect = self.image.get_rect(topleft=(self.x-(self.width/2), self.y-(self.height/2)))
-#         self.image = pygame.image.load(r"Images\bus.jpg").convert()
-#         self.height = 3 * 50
-#         self.width = 2.5 * 50 
-        self.x = 320
-        self.y = 320
 #         self.image = pygame.transform.scale(self.image, (self.width, self.height))
-        # self.rect = self.image.get_rect(topleft=(self.x-(self.width/2), self.y-(self.height/2)))
         self.rect = self.image.get_rect(center=(self.x, self.y))
 
 
