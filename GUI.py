@@ -4,7 +4,7 @@ import numpy   #unneeded rn
 import pygame
 from pygame.locals import *
 
-from Sprites.py import Obstacles, Bus
+from Sprites import Obstacle, Bus
 
 
 
@@ -23,6 +23,8 @@ class GUI:
         self.all_sprites = pygame.sprite.Group()
         self.bus = Bus()
         self.all_sprites.add(self.bus)
+        self.person = Obstacle("Person", (200,200))
+        self.all_sprites.add(self.person)
         self.all_sprites.draw(self.screen)
 
 
