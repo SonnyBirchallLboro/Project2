@@ -3,6 +3,7 @@ import sys
 import numpy   #unneeded rn
 import pygame
 from pygame.locals import *
+import random
 
 from Sprites import Obstacle, Bus
 
@@ -41,6 +42,23 @@ class GUI:
 
             self.fpsClock.tick(self.fps)
 
+    
+    def run_test(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+            self.obstaclesList = []
+            if len(self.obstaclesList) <5 and random.randint(1,3) == 1:
+                self.obstaclesList.append(Obstacle(random.choice(["Person", "Car"]), (random.randint(0, 640), random.randint(0, 640))))
+                self.all_sprites.add(self.obstaclesList[-1])
+            self.all_sprites.draw(self.screen)
+            self.fpsClock.tick(self.fps)
+
+
+
 
 
 
@@ -51,4 +69,4 @@ class GUI:
 
 if __name__ == '__main__':
     gui = GUI()
-    gui.run()
+    gui.run_test()
