@@ -20,7 +20,7 @@ class GUI:
         self.screen.fill(constants.white)
         self.all_sprites = pygame.sprite.Group()
         self.bus = Bus()
-        self.O = Obstacle('Person', -45, 15)
+        self.O = Obstacle('Person', 90, 15)
         self.all_sprites.add(self.bus, self.O)
         self.all_sprites.draw(self.screen)
 
