@@ -12,6 +12,7 @@ class Bus(pygame.sprite.Sprite):
         self.image = sprite_sheet.get_image(0, 0, 22, 26, 4, constants.white).convert_alpha()
         self.x = constants.WIDTH/2
         self.y = constants.HEIGHT/2
+
         self.rect = self.image.get_rect(center=(self.x, self.y))
 
 class Obstacle(pygame.sprite.Sprite):

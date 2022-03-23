@@ -3,6 +3,7 @@ import sys
 import numpy   #unneeded rn
 import pygame
 from pygame.locals import *
+import random
 
 from Sprites import Obstacle, Bus
 import constants
@@ -44,6 +45,7 @@ class GUI:
             pygame.display.update()
             self.all_sprites.update()
 
+
             #display the display
             self.screen.fill(constants.white)
             self.draw_distance()
@@ -53,4 +55,4 @@ class GUI:
 
 if __name__ == '__main__':
     gui = GUI()
-    gui.run()
+    gui.run_test()
